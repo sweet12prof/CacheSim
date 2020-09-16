@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/TI Lab/Desktop/Project/New folder/CacheSim/Headers/CacheConfig/Cache.hpp
+vector
+-
+
+C:/Users/TI Lab/Desktop/Project/New folder/CacheSim/SourceFiles/main.cpp
+iostream
+-
+../Headers/CacheConfig/Cache.hpp
+C:/Users/TI Lab/Desktop/Project/New folder/CacheSim/Headers/CacheConfig/Cache.hpp
+

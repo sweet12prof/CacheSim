@@ -21,6 +21,8 @@ class Cache {
         //
         int replacementPolicy;
 
+        //
+        int blockOffset;
 
         //
         int index;
@@ -32,6 +34,7 @@ class Cache {
 
         std::vector <int> DataField;
 
+        int dataIndex;
 
 
     public:
@@ -51,6 +54,10 @@ class Cache {
         void setReplacementPolicy(const int &);
         int getReplacementPolicy() const;
 
+        //
+        void setBlockOffset();
+        int getBlockOffset() const;
+
         Cache();
         Cache(const int &, const int &, const int &);
         ~Cache();
@@ -62,6 +69,14 @@ class Cache {
         //set Index
         void setIndex();
         int getIndex() const;
+
+        //
+        void setDataIndex();
+        int getDataIndex() const;
+
+        template <typename T>
+        void resizedataIndexField(std::vector<T>);
+
 };
 
 #endif

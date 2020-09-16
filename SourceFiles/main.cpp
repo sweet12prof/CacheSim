@@ -3,5 +3,5 @@
 int main(){
     Cache someCache(1, 16, 16);
 
-    std::cout << someCache.getIndex();
+   // std::cout << "Index is : " << someCache.getIndex();
 }

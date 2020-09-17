@@ -1,7 +1,6 @@
 add_library(
     sources
     main.cpp
-    Cache.cpp
 )
 
 add_executable(output main.cpp)

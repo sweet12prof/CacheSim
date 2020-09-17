@@ -1,0 +1,2 @@
+/opt/rh/devtoolset-9/root/usr/bin/ar cq libsources.a  CMakeFiles/sources.dir/main.cpp.o
+/opt/rh/devtoolset-9/root/usr/bin/ranlib libsources.a

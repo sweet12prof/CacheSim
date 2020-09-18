@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/sweet12prof/Desktop/Final/CacheSim/Headers/CacheConfig/Cache.hpp
+vector
+-
+
+/home/sweet12prof/Desktop/Final/CacheSim/SourceFiles/main.cpp
+iostream
+-
+iomanip
+-
+../Headers/CacheConfig/Cache.hpp
+/home/sweet12prof/Desktop/Final/CacheSim/Headers/CacheConfig/Cache.hpp
+

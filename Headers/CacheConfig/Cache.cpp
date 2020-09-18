@@ -101,35 +101,6 @@ template <typename T>
         LRUStruc.resize((this->index * this->associativity));
     }
 
-std::pair <bool, int> Cache::isHitAccess(const int & Tag, const int & address){
-    
-        if( (address >= (this->index * this->associativity) ) )
-            return {false, -1};
-        
-        else  if((Cache::TagField.at(address) == Tag) &&  ( Cache::validField.at(address)) == true)
-            return {true, address};
-
-        else     
-            return Cache::isHitAccess(Tag, (address + Cache::index));
-            
-}
-
-
-bool Cache::isDirtyAccess( const int & address)
-{
-    return Cache::dirtyField.at(address);
-}
-
-void Cache::CacheWrite(const int & Tag, const int & address, const int & way){
-    int fullAddress {(address + (way * Cache::index) )};
-    TagField.at(fullAddress) = Tag;
-    validField.at(fullAddress) = true;
-}
-
-void Cache::CacheDirtyWrite(const int & address, const int & way, bool dirty){
-    int fullAddress { address + (way *  Cache::index) };
-    dirtyField.at(fullAddress) = dirty;
-}
 
 void Cache::valid_dirty_LRU_Initialise(){
     std::fill(Cache::validField.begin(), Cache::validField.end(), false);
@@ -142,6 +113,129 @@ void Cache::valid_dirty_LRU_Initialise(){
             
     }
 }
+
+
+std::pair <bool, std::pair<int, int>> Cache::isHitAccess(const int & Tag, const int & address, int i){
+    
+        if( (address >= (this->index * this->associativity) ) )
+            return {false, {-1, -1}};
+        
+        else  if((Cache::TagField.at(address) == Tag) &&  ( Cache::validField.at(address)) == true)
+            return {true, {address, i}};
+
+        else     
+            return Cache::isHitAccess(Tag, (address + Cache::index), ++i);
+            
+}
+
+    bool Cache::isDirtyAccess( const int & address)
+    {
+        return Cache::dirtyField.at(address);
+    }
+
+    void Cache::CacheWrite (const int & address, const int & Tag, bool dirty){
+        TagField.at(address) = Tag;
+        validField.at(address) = true;
+        Cache::dirtyField.at(address) = dirty;
+    }
+
+
+    std::vector<int> Cache::lru (std::vector<int> iniVec, int wayPos){
+        std::vector<int> resVec;
+        if(wayPos > 0)
+            {
+                resVec.push_back(iniVec.at(wayPos));
+                for(int i{0}; i < wayPos; i++)
+                    resVec.push_back(iniVec.at(i));
+                for(int j {wayPos + 1}; j <iniVec.size(); j++ )
+                    resVec.push_back(iniVec.at(j));                    
+            }
+        else 
+            resVec.insert(iniVec.begin(), iniVec.end(), resVec.begin());
+        
+        return resVec;
+    }
+
+
+    void Cache::LRUreadUpdate(const int & address){
+      std::vector <int> LRUvec;
+      int set{address % Cache::index};
+      int i{0};
+      while(i < Cache::associativity){
+          LRUvec.push_back( Cache::LRUBitField.at(i + set) );
+          ++i;
+      }
+
+     std::vector <int> resVec = Cache::lru(LRUvec, 2);
+      
+      i = 0;
+      while(i < Cache::associativity){
+         Cache::LRUBitField.at(i + set) = resVec.at(i);
+          ++i;
+      }
+
+
+    // for(auto item : resVec)
+    //     std::cout << item << std::endl;
+    //     i = 0;
+    //   while(i < Cache::associativity)
+    //     {
+    //         std::cout << Cache::LRUBitField.at(i + set) << std::endl;
+    //         ++i;
+    //     }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // std::pair<int, int> Cache::LRUplacement(const int & index){

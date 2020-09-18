@@ -31,7 +31,7 @@ class Cache {
         std::vector <bool> validField;
         std::vector <bool> dirtyField;
         std::vector <int> TagField;
-        std::vector <int> LRUBitField;
+        
 
         std::vector <int> DataField;
 
@@ -39,6 +39,7 @@ class Cache {
 
 
     public:
+    std::vector <int> LRUBitField;
         //accessor and mutator for cache sIZE
         void setCacheSize(const int &);
         int getCacheSize() const;
@@ -78,28 +79,23 @@ class Cache {
         template <typename T>
         void resizedataIndexField(std::vector<T> &);
 
+         //Initialise Valid and FDirtyField
+        void valid_dirty_LRU_Initialise();
 
         //Determine if access is hit
-        std::pair <bool, int> isHitAccess(const int &, const int &);
+        std::pair <bool, std::pair<int, int>> isHitAccess(const int &, const int &, int);
 
         //Determine if write oOperation is associated with a dirty block
         bool isDirtyAccess( const int &);
 
         //Cache Write
-        void CacheWrite(const int &, const int &, const int &);
+        void CacheWrite(const int &, const int &, bool);
+        
+        //refresh LRU priorities after read 
+        void LRUreadUpdate(const int &);
 
-        //Cache Dirty Field Write
-        void CacheDirtyWrite(const int &, const int &, bool );
 
-        //Initialise Valid and FDirtyField
-        void valid_dirty_LRU_Initialise();
-
-        // //Find the index and way To replace 
-        // std::pair<int, int> LRUplacement(const int & address);
-
-        // void updateLRU(const int &, const int &);
-
-        // static std::vector<int> lru (std::vector<int>, int );
+        static std::vector<int> lru (std::vector<int>, int);
         
 };
 

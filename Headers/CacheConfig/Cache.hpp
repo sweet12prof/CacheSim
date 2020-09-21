@@ -30,7 +30,7 @@ class Cache {
 
         std::vector <bool> validField;
         std::vector <bool> dirtyField;
-        std::vector <int> TagField;
+        
         
 
         std::vector <int> DataField;
@@ -40,6 +40,7 @@ class Cache {
 
     public:
     std::vector <int> LRUBitField;
+    std::vector <int> TagField;
         //accessor and mutator for cache sIZE
         void setCacheSize(const int &);
         int getCacheSize() const;
@@ -83,20 +84,19 @@ class Cache {
         void valid_dirty_LRU_Initialise();
 
         //Determine if access is hit
-        std::pair <bool, std::pair<int, int>> isHitAccess(const int &, const int &, int);
-
-        //Determine if write oOperation is associated with a dirty block
-        bool isDirtyAccess( const int &);
-
-        //Cache Write
-        void CacheWrite(const int &, const int &, bool);
+        std::pair <bool, std::pair<int, int>> isHitAccess(const int &, const int &, int);   
         
-        //refresh LRU priorities after read 
-        void LRUreadUpdate(const int &);
-
-
-        static std::vector<int> lru (std::vector<int>, int);
+        //Cache Access
+        int Read_Hit_LRU_Update(std::pair <bool, std::pair<int, int>> hitResult, bool );
         
+        // LRU update for read and Write
+        static std::vector <int> lruUpdate (std::vector<int>, bool , int &);
+
+        //Read Cache Access
+        bool ReadAccess(const int &, const int );
+
+        //Write Cache line
+        void cacheWrite(const int &, const int &);
 };
 
 #endif

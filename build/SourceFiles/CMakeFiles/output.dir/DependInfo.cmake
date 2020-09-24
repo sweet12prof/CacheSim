@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/sweet12prof/Desktop/Final/CacheSim/SourceFiles/main.cpp" "/home/sweet12prof/Desktop/Final/CacheSim/build/SourceFiles/CMakeFiles/output.dir/main.cpp.o"
+  "C:/Users/TI Lab/Desktop/Project/New folder/CacheSim/SourceFiles/main.cpp" "C:/Users/TI Lab/Desktop/Project/New folder/CacheSim/Build/SourceFiles/CMakeFiles/output.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -15,5 +15,8 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/sweet12prof/Desktop/Final/CacheSim/build/Headers/CMakeFiles/Cache_Headers.dir/DependInfo.cmake"
+  "C:/Users/TI Lab/Desktop/Project/New folder/CacheSim/Build/Headers/CMakeFiles/Cache_Headers.dir/DependInfo.cmake"
   )
+
+# Fortran module output directory.
+set(CMAKE_Fortran_TARGET_MODULE_DIR "")

@@ -1,17 +1,17 @@
 [
 {
-  "directory": "/home/sweet12prof/Desktop/Final/CacheSim/build/Headers",
-  "command": "/opt/rh/devtoolset-9/root/usr/bin/g++    -g -I/home/sweet12prof/Desktop/Final/CacheSim/Headers/CacheConfig    -o CMakeFiles/Cache_Headers.dir/CacheConfig/Cache.cpp.o -c /home/sweet12prof/Desktop/Final/CacheSim/Headers/CacheConfig/Cache.cpp",
-  "file": "/home/sweet12prof/Desktop/Final/CacheSim/Headers/CacheConfig/Cache.cpp"
+  "directory": "C:/Users/TI Lab/Desktop/Project/New folder/CacheSim/Build/Headers",
+  "command": "C:\\MinGW\\bin\\g++.exe  @CMakeFiles/Cache_Headers.dir/includes_CXX.rsp -g -o CMakeFiles\\Cache_Headers.dir\\CacheConfig\\Cache.cpp.obj -c \"C:\\Users\\TI Lab\\Desktop\\Project\\New folder\\CacheSim\\Headers\\CacheConfig\\Cache.cpp\"",
+  "file": "C:/Users/TI Lab/Desktop/Project/New folder/CacheSim/Headers/CacheConfig/Cache.cpp"
 },
 {
-  "directory": "/home/sweet12prof/Desktop/Final/CacheSim/build/SourceFiles",
-  "command": "/opt/rh/devtoolset-9/root/usr/bin/g++    -g -I/home/sweet12prof/Desktop/Final/CacheSim/Headers/CacheConfig    -o CMakeFiles/output.dir/main.cpp.o -c /home/sweet12prof/Desktop/Final/CacheSim/SourceFiles/main.cpp",
-  "file": "/home/sweet12prof/Desktop/Final/CacheSim/SourceFiles/main.cpp"
+  "directory": "C:/Users/TI Lab/Desktop/Project/New folder/CacheSim/Build/SourceFiles",
+  "command": "C:\\MinGW\\bin\\g++.exe   -g -o CMakeFiles\\sources.dir\\main.cpp.obj -c \"C:\\Users\\TI Lab\\Desktop\\Project\\New folder\\CacheSim\\SourceFiles\\main.cpp\"",
+  "file": "C:/Users/TI Lab/Desktop/Project/New folder/CacheSim/SourceFiles/main.cpp"
 },
 {
-  "directory": "/home/sweet12prof/Desktop/Final/CacheSim/build/SourceFiles",
-  "command": "/opt/rh/devtoolset-9/root/usr/bin/g++    -g   -o CMakeFiles/sources.dir/main.cpp.o -c /home/sweet12prof/Desktop/Final/CacheSim/SourceFiles/main.cpp",
-  "file": "/home/sweet12prof/Desktop/Final/CacheSim/SourceFiles/main.cpp"
+  "directory": "C:/Users/TI Lab/Desktop/Project/New folder/CacheSim/Build/SourceFiles",
+  "command": "C:\\MinGW\\bin\\g++.exe  @CMakeFiles/output.dir/includes_CXX.rsp -g -o CMakeFiles\\output.dir\\main.cpp.obj -c \"C:\\Users\\TI Lab\\Desktop\\Project\\New folder\\CacheSim\\SourceFiles\\main.cpp\"",
+  "file": "C:/Users/TI Lab/Desktop/Project/New folder/CacheSim/SourceFiles/main.cpp"
 }
 ]

@@ -1,2 +1,2 @@
-/opt/rh/devtoolset-9/root/usr/bin/ar cq libCache_Headers.a  CMakeFiles/Cache_Headers.dir/CacheConfig/Cache.cpp.o
-/opt/rh/devtoolset-9/root/usr/bin/ranlib libCache_Headers.a
+C:\MinGW\bin\ar.exe qc libCache_Headers.a CMakeFiles/Cache_Headers.dir/CacheConfig/Cache.cpp.obj
+C:\MinGW\bin\ranlib.exe libCache_Headers.a

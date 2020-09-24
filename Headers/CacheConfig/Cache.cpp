@@ -124,7 +124,6 @@ std::pair <bool, std::pair<int, int>> Cache::isHitAccess(const int & Tag, const 
 int Cache::Read_Hit_LRU_Update(std::pair <bool, std::pair<int, int>> hitResult, bool isRead){
     
     int set_mod{hitResult.second.first % Cache::index};
-    // std::cout << "set mod is " << set_mod << std::endl;
     std::vector<int> iniVec; 
 
     for(int i{Cache::associativity * set_mod}; i <  (Cache::associativity * set_mod) + Cache::associativity; i++)
@@ -132,77 +131,58 @@ int Cache::Read_Hit_LRU_Update(std::pair <bool, std::pair<int, int>> hitResult, 
 
     std::vector <int > result = Cache::lruUpdate(iniVec, isRead, hitResult.second.second);
 
-    for(auto item : result)
-        std::cout << "res is " << item << " ";
-    std::cout << std::endl;
-
-
     int j{0};     
     for(int i{Cache::associativity * set_mod}; i <  ((Cache::associativity * set_mod) + Cache::associativity); i++)
-        {
-            
+        {   
             Cache::LRUBitField.at(i) = result.at(j);
             ++j;
         }
-    return result.back();
+        
+    return result.front();
 }
 
 
-bool Cache::ReadAccess(const int & Tag, const int index){
+ std::pair <bool, bool> Cache::ReadAccess(const int & Tag, const int index){
     std::pair <bool, std::pair<int, int>> hit = Cache::isHitAccess(Tag, (index % Cache::index), 0); // Determine if Access is a hit or not
-      
-   
+    bool isDirtymiss=false;
     if(hit.first == false)
             {
-                //  std::cout << "Read access indexx is : " << hit.second.first << std::endl;
-                 std::cout << "Cache doesnt hold requested Data, fetching from main Memory"  << std::endl; 
-                Cache::cacheWrite(Tag, index);
+                std::cout << "Cache doesnt hold requested Data, fetching from main Memory"  << std::endl; 
+                 std::pair <bool, bool> writeBackResult = Cache::cacheWrite(Tag, index);
+                 isDirtymiss = writeBackResult.second;
                 hit = Cache::isHitAccess(Tag, (index % Cache::index), 0);
             }
-    
-   else {
-       int factor = Cache::Read_Hit_LRU_Update(hit, true); // Refresh LRU 
-   }
-    
-        
-    return hit.first;
-}
+     else {
+            int factor = Cache::Read_Hit_LRU_Update(hit, true); // Refresh LRU 
 
-
-
-
-void Cache::cacheWrite(const int & Tag, const int & indexInput){
-   
-  auto hitresult = Cache::isHitAccess(Tag, (indexInput % Cache::index), 0);
- 
-   
-  if(hitresult.first == false){
-      int factor = Cache::Read_Hit_LRU_Update(hitresult, false);
-    //    std::cout << "hit result is : " << factor << std::endl;
-      
-      Cache::TagField.at( (Cache::index * (factor)) + (indexInput % Cache::index) ) = Tag;
-      Cache::validField.at( (Cache::index * (factor)) + (indexInput % Cache::index) ) = true;
-      Cache::dirtyField.at( (Cache::index * (factor)) + (indexInput % Cache::index) ) = false;
+     }
        
-  }
-  else 
-    {
-        
-        // Cache::TagField.at( (Cache::index * (factor)) + (indexInput % Cache::index) ) = Tag;
-        Cache::dirtyField.at(hitresult.second.first) = true;
-        Cache::TagField.at(hitresult.second.first) = Tag;
-        Cache::validField.at(hitresult.second.first) = true;
-        int factor = Cache::Read_Hit_LRU_Update(hitresult, true);
-    }  
-    
+    return {hit.first, isDirtymiss};
 }
 
 
 
 
-
-
-
+ std::pair <bool, bool> Cache::cacheWrite(const int & Tag, const int & indexInput){
+   
+  auto hitresult = Cache::isHitAccess(Tag, (indexInput % Cache::index), 0);  
+    if(hitresult.first == false){
+        int factor = Cache::Read_Hit_LRU_Update(hitresult, false);
+        Cache::TagField.at( (Cache::index * (factor)) + (indexInput % Cache::index) ) = Tag;
+        Cache::validField.at( (Cache::index * (factor)) + (indexInput % Cache::index) ) = true;
+        Cache::dirtyField.at( (Cache::index * (factor)) + (indexInput % Cache::index) ) = false;       
+        return {hitresult.first, Cache::dirtyField.at( (Cache::index * (factor)) + (indexInput % Cache::index))};     
+    }
+    else 
+        {
+            Cache::dirtyField.at(hitresult.second.first) = true;
+            Cache::TagField.at(hitresult.second.first) = Tag;
+            Cache::validField.at(hitresult.second.first) = true;
+            int factor = Cache::Read_Hit_LRU_Update(hitresult, true);
+            return {hitresult.first, Cache::dirtyField.at( hitresult.second.first) };
+        }  
+    
+}
 
 
 
@@ -226,7 +206,6 @@ std::vector <int> Cache::lruUpdate (std::vector<int> iniVec, bool  isRead, int &
         }
     
     else {
-       // std::cout << "back is " << iniVec.back() << std::endl;
             result.push_back(iniVec.back());
             for(int i{0}; i < iniVec.size() - 1; i++)
                 result.push_back(iniVec.at(i));
@@ -235,3 +214,38 @@ std::vector <int> Cache::lruUpdate (std::vector<int> iniVec, bool  isRead, int &
     return result;
 
 }   
+
+
+ void Cache::readLRUStruc(){
+      int i {0};
+    for(auto item : Cache::LRUBitField)
+      {
+        if(i == Cache::getAssociativity() ){
+          std::cout << std::endl;
+          i = 0;
+        }
+          
+        std:: cout << item <<  " ";
+        ++i;
+      }
+    std::cout << std::endl;
+ }
+
+
+void Cache::readSpecificLRUset(const int & index){
+     int set_mod{index % Cache::index};
+     for(int i{Cache::associativity * set_mod}; i <  (Cache::associativity * set_mod) + Cache::associativity; i++)
+        std::cout << Cache::LRUBitField.at(i) << "  ";
+    std::cout << std::endl;
+}
+
+
+void Cache::readSpecificTagSet(const int & index){
+     int i{index % Cache::index};
+      
+     while(i < Cache::TagField.size()){
+            std::cout << Cache::TagField.at(i) << " ";
+            i += Cache::getIndex();
+        }
+    std::cout << std::endl;
+}

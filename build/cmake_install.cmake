@@ -1,8 +1,8 @@
-# Install script for directory: /home/sweet12prof/Desktop/Final/CacheSim
+# Install script for directory: C:/Users/TI Lab/Desktop/Project/New folder/CacheSim
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/usr/local")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/MyProject")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -27,15 +27,20 @@ if(NOT CMAKE_INSTALL_COMPONENT)
   endif()
 endif()
 
-# Install shared libraries without execute permission?
-if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
-  set(CMAKE_INSTALL_SO_NO_EXE "0")
+# Is this installation the result of a crosscompile?
+if(NOT DEFINED CMAKE_CROSSCOMPILING)
+  set(CMAKE_CROSSCOMPILING "FALSE")
+endif()
+
+# Set default install directory permissions.
+if(NOT DEFINED CMAKE_OBJDUMP)
+  set(CMAKE_OBJDUMP "C:/MinGW/bin/objdump.exe")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/sweet12prof/Desktop/Final/CacheSim/build/Headers/cmake_install.cmake")
-  include("/home/sweet12prof/Desktop/Final/CacheSim/build/SourceFiles/cmake_install.cmake")
+  include("C:/Users/TI Lab/Desktop/Project/New folder/CacheSim/Build/Headers/cmake_install.cmake")
+  include("C:/Users/TI Lab/Desktop/Project/New folder/CacheSim/Build/SourceFiles/cmake_install.cmake")
 
 endif()
 
@@ -47,5 +52,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/sweet12prof/Desktop/Final/CacheSim/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/TI Lab/Desktop/Project/New folder/CacheSim/Build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

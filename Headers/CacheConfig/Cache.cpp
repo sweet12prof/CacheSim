@@ -145,6 +145,7 @@ int Cache::Read_Hit_LRU_Update(std::pair <bool, std::pair<int, int>> hitResult, 
  std::pair <bool, bool> Cache::ReadAccess(const int & Tag, const int index){
     std::pair <bool, std::pair<int, int>> hit = Cache::isHitAccess(Tag, (index % Cache::index), 0); // Determine if Access is a hit or not
     bool isDirtymiss=false;
+    bool hitFirst = hit.first;
     if(hit.first == false)
             {
                 std::cout << "Cache doesnt hold requested Data, fetching from main Memory"  << std::endl; 
@@ -157,7 +158,7 @@ int Cache::Read_Hit_LRU_Update(std::pair <bool, std::pair<int, int>> hitResult, 
 
      }
        
-    return {hit.first, isDirtymiss};
+    return {hitFirst, isDirtymiss};
 }
 
 

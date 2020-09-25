@@ -77,14 +77,15 @@ void CacheAnalyzer::Cache_Load_Access(const int & Tag, const int & index){
        
         ++CacheAnalyzer::loadCount;
         ++executionTime_cycles;
-    
-    if( access_results.first == true)
+    //std::cout <<std::boolalpha << access_results.first;
+    if( access_results.first)
         ++CacheAnalyzer::loadhitCount;
    
     else {
         
         ++CacheAnalyzer::loadMissCount;
         CacheAnalyzer::executionTime_cycles += CacheAnalyzer::missPenalty;
+        
       
        if(access_results.second == true)
         {
@@ -121,7 +122,6 @@ void CacheAnalyzer::Cache_Access(const int & address, bool isRead, int priorInst
     std::bitset<32> address_in_bits (address);
     address_in_bits = address_in_bits >> 2;
     int block_offset_bits {std::log2(CacheAnalyzer::getBlockOffset() )};
-    std::cout << block_offset_bits << std::endl;
     address_in_bits = address_in_bits >> block_offset_bits;
    
    int addressSliced = address_in_bits.to_ulong();
@@ -136,12 +136,9 @@ void CacheAnalyzer::Cache_Access(const int & address, bool isRead, int priorInst
 
    address_in_bits =  address_in_bits << ( 32 - (2 + std::log2(CacheAnalyzer::getBlockOffset() ) + std::log2(CacheAnalyzer::getIndex() )) );
    address_in_bits =  address_in_bits >> ( 32 - (2 + std::log2(CacheAnalyzer::getBlockOffset() ) + std::log2(CacheAnalyzer::getIndex() )) );
-    //std::cout <<   32 - 2 -std::log2(CacheAnalyzer::getBlockOffset()) - std::log2(CacheAnalyzer::getIndex() )  << std::endl;
    address_in_bits = address_in_bits >> (2 + std::log2(CacheAnalyzer::getBlockOffset() ));
 
    int Index = address_in_bits.to_ulong();
-   
-   std::cout << "Tag is: " << Tag << " Index is : " << Index << std::endl;
    CacheAnalyzer::memAcesses++;
 
    if (isRead == true)

@@ -6,8 +6,14 @@ int main(){
     // Cache someCache(8, 64, 128);
    
     	 CacheAnalyzer someCache(8, 16, 128, 30, 2);
+         someCache.Cache_Access(12345678, true, 10);
          someCache.Cache_Access(12345678, false, 10);
-          std::cout << someCache.getexecutionTimeCycles();
+         someCache.Cache_Access(12345678, false, 10);
+         someCache.Cache_Access(12345678, false, 10);
+         someCache.Cache_Access(12345678, false, 10);
+         someCache.Cache_Access(12345678, false, 10);
+         someCache.Cache_Access(12345678, false, 10);
+          std::cout << someCache.getStoreHitCount();
           
 
          

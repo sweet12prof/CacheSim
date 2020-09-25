@@ -6,6 +6,16 @@
 
 #IncludeRegexTransform: 
 
+C:/Users/TI Lab/Desktop/Project/New folder/CacheSim/Headers/CacheConfig/Cache.cpp
+./Cache.hpp
+C:/Users/TI Lab/Desktop/Project/New folder/CacheSim/Headers/CacheConfig/Cache.hpp
+iostream
+-
+iterator
+-
+algorithm
+-
+
 C:/Users/TI Lab/Desktop/Project/New folder/CacheSim/Headers/CacheConfig/Cache.hpp
 vector
 -

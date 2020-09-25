@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Cache_Headers.dir/CacheConfig/Cache.cpp.obj"
+  "CMakeFiles/Cache_Headers.dir/CacheConfig/CacheAnalyze.cpp.obj"
   "libCache_Headers.a"
   "libCache_Headers.pdb"
 )

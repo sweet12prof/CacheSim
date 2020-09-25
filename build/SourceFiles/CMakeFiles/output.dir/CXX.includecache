@@ -10,11 +10,21 @@ C:/Users/TI Lab/Desktop/Project/New folder/CacheSim/Headers/CacheConfig/Cache.hp
 vector
 -
 
+C:/Users/TI Lab/Desktop/Project/New folder/CacheSim/Headers/CacheConfig/CacheAnalyze.hpp
+./Cache.hpp
+C:/Users/TI Lab/Desktop/Project/New folder/CacheSim/Headers/CacheConfig/Cache.hpp
+bitset
+-
+cmath
+-
+
 C:/Users/TI Lab/Desktop/Project/New folder/CacheSim/SourceFiles/main.cpp
 iostream
 -
 iomanip
 -
-../Headers/CacheConfig/Cache.hpp
-C:/Users/TI Lab/Desktop/Project/New folder/CacheSim/Headers/CacheConfig/Cache.hpp
+sstream
+-
+../Headers/CacheConfig/CacheAnalyze.hpp
+C:/Users/TI Lab/Desktop/Project/New folder/CacheSim/Headers/CacheConfig/CacheAnalyze.hpp
 

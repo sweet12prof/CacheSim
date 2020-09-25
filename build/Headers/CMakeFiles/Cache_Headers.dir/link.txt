@@ -1,2 +1,2 @@
-C:\MinGW\bin\ar.exe qc libCache_Headers.a CMakeFiles/Cache_Headers.dir/CacheConfig/Cache.cpp.obj
+C:\MinGW\bin\ar.exe qc libCache_Headers.a CMakeFiles/Cache_Headers.dir/CacheConfig/Cache.cpp.obj CMakeFiles/Cache_Headers.dir/CacheConfig/CacheAnalyze.cpp.obj
 C:\MinGW\bin\ranlib.exe libCache_Headers.a

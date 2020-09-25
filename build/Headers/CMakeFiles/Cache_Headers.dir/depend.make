@@ -4,3 +4,7 @@
 Headers/CMakeFiles/Cache_Headers.dir/CacheConfig/Cache.cpp.obj: ../Headers/CacheConfig/Cache.cpp
 Headers/CMakeFiles/Cache_Headers.dir/CacheConfig/Cache.cpp.obj: ../Headers/CacheConfig/Cache.hpp
 
+Headers/CMakeFiles/Cache_Headers.dir/CacheConfig/CacheAnalyze.cpp.obj: ../Headers/CacheConfig/Cache.hpp
+Headers/CMakeFiles/Cache_Headers.dir/CacheConfig/CacheAnalyze.cpp.obj: ../Headers/CacheConfig/CacheAnalyze.cpp
+Headers/CMakeFiles/Cache_Headers.dir/CacheConfig/CacheAnalyze.cpp.obj: ../Headers/CacheConfig/CacheAnalyze.hpp
+

@@ -170,6 +170,33 @@ CacheConfig/Cache.cpp.s:
 	cd /d C:\Users\TILAB~1\Desktop\Project\NEWFOL~1\CacheSim\Build && $(MAKE) $(MAKESILENT) -f Headers\CMakeFiles\Cache_Headers.dir\build.make Headers/CMakeFiles/Cache_Headers.dir/CacheConfig/Cache.cpp.s
 .PHONY : CacheConfig/Cache.cpp.s
 
+CacheConfig/CacheAnalyze.obj: CacheConfig/CacheAnalyze.cpp.obj
+
+.PHONY : CacheConfig/CacheAnalyze.obj
+
+# target to build an object file
+CacheConfig/CacheAnalyze.cpp.obj:
+	cd /d C:\Users\TILAB~1\Desktop\Project\NEWFOL~1\CacheSim\Build && $(MAKE) $(MAKESILENT) -f Headers\CMakeFiles\Cache_Headers.dir\build.make Headers/CMakeFiles/Cache_Headers.dir/CacheConfig/CacheAnalyze.cpp.obj
+.PHONY : CacheConfig/CacheAnalyze.cpp.obj
+
+CacheConfig/CacheAnalyze.i: CacheConfig/CacheAnalyze.cpp.i
+
+.PHONY : CacheConfig/CacheAnalyze.i
+
+# target to preprocess a source file
+CacheConfig/CacheAnalyze.cpp.i:
+	cd /d C:\Users\TILAB~1\Desktop\Project\NEWFOL~1\CacheSim\Build && $(MAKE) $(MAKESILENT) -f Headers\CMakeFiles\Cache_Headers.dir\build.make Headers/CMakeFiles/Cache_Headers.dir/CacheConfig/CacheAnalyze.cpp.i
+.PHONY : CacheConfig/CacheAnalyze.cpp.i
+
+CacheConfig/CacheAnalyze.s: CacheConfig/CacheAnalyze.cpp.s
+
+.PHONY : CacheConfig/CacheAnalyze.s
+
+# target to generate assembly for a file
+CacheConfig/CacheAnalyze.cpp.s:
+	cd /d C:\Users\TILAB~1\Desktop\Project\NEWFOL~1\CacheSim\Build && $(MAKE) $(MAKESILENT) -f Headers\CMakeFiles\Cache_Headers.dir\build.make Headers/CMakeFiles/Cache_Headers.dir/CacheConfig/CacheAnalyze.cpp.s
+.PHONY : CacheConfig/CacheAnalyze.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -182,6 +209,9 @@ help:
 	@echo ... CacheConfig/Cache.obj
 	@echo ... CacheConfig/Cache.i
 	@echo ... CacheConfig/Cache.s
+	@echo ... CacheConfig/CacheAnalyze.obj
+	@echo ... CacheConfig/CacheAnalyze.i
+	@echo ... CacheConfig/CacheAnalyze.s
 .PHONY : help
 
 

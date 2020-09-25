@@ -1,0 +1,107 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2
+					],
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.3"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "Headers",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.3"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "Headers",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "SourceFiles",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.3"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "SourceFiles",
+					"targetIndexes" : 
+					[
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2
+					],
+					"name" : "MyProject",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 1,
+					"id" : "Cache_Headers::@75e0f3e2b3629810e5b1",
+					"jsonFile" : "target-Cache_Headers-Debug-a17adcaf4c5257b015a4.json",
+					"name" : "Cache_Headers",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "output::@a076de986d942e268687",
+					"jsonFile" : "target-output-Debug-ecb4b46ac6b5374a6a4a.json",
+					"name" : "output",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "sources::@a076de986d942e268687",
+					"jsonFile" : "target-sources-Debug-a266a89d0cba02a535fe.json",
+					"name" : "sources",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/TI Lab/Desktop/Project/New folder/CacheSim/Build",
+		"source" : "C:/Users/TI Lab/Desktop/Project/New folder/CacheSim"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 1
+	}
+}

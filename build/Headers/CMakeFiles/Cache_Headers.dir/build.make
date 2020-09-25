@@ -89,17 +89,33 @@ Headers/CMakeFiles/Cache_Headers.dir/CacheConfig/Cache.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Cache_Headers.dir/CacheConfig/Cache.cpp.s"
 	cd /d C:\Users\TILAB~1\Desktop\Project\NEWFOL~1\CacheSim\Build\Headers && C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\TI Lab\Desktop\Project\New folder\CacheSim\Headers\CacheConfig\Cache.cpp" -o CMakeFiles\Cache_Headers.dir\CacheConfig\Cache.cpp.s
 
+Headers/CMakeFiles/Cache_Headers.dir/CacheConfig/CacheAnalyze.cpp.obj: Headers/CMakeFiles/Cache_Headers.dir/flags.make
+Headers/CMakeFiles/Cache_Headers.dir/CacheConfig/CacheAnalyze.cpp.obj: Headers/CMakeFiles/Cache_Headers.dir/includes_CXX.rsp
+Headers/CMakeFiles/Cache_Headers.dir/CacheConfig/CacheAnalyze.cpp.obj: ../Headers/CacheConfig/CacheAnalyze.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\TI Lab\Desktop\Project\New folder\CacheSim\Build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object Headers/CMakeFiles/Cache_Headers.dir/CacheConfig/CacheAnalyze.cpp.obj"
+	cd /d C:\Users\TILAB~1\Desktop\Project\NEWFOL~1\CacheSim\Build\Headers && C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Cache_Headers.dir\CacheConfig\CacheAnalyze.cpp.obj -c "C:\Users\TI Lab\Desktop\Project\New folder\CacheSim\Headers\CacheConfig\CacheAnalyze.cpp"
+
+Headers/CMakeFiles/Cache_Headers.dir/CacheConfig/CacheAnalyze.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Cache_Headers.dir/CacheConfig/CacheAnalyze.cpp.i"
+	cd /d C:\Users\TILAB~1\Desktop\Project\NEWFOL~1\CacheSim\Build\Headers && C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\TI Lab\Desktop\Project\New folder\CacheSim\Headers\CacheConfig\CacheAnalyze.cpp" > CMakeFiles\Cache_Headers.dir\CacheConfig\CacheAnalyze.cpp.i
+
+Headers/CMakeFiles/Cache_Headers.dir/CacheConfig/CacheAnalyze.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Cache_Headers.dir/CacheConfig/CacheAnalyze.cpp.s"
+	cd /d C:\Users\TILAB~1\Desktop\Project\NEWFOL~1\CacheSim\Build\Headers && C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\TI Lab\Desktop\Project\New folder\CacheSim\Headers\CacheConfig\CacheAnalyze.cpp" -o CMakeFiles\Cache_Headers.dir\CacheConfig\CacheAnalyze.cpp.s
+
 # Object files for target Cache_Headers
 Cache_Headers_OBJECTS = \
-"CMakeFiles/Cache_Headers.dir/CacheConfig/Cache.cpp.obj"
+"CMakeFiles/Cache_Headers.dir/CacheConfig/Cache.cpp.obj" \
+"CMakeFiles/Cache_Headers.dir/CacheConfig/CacheAnalyze.cpp.obj"
 
 # External object files for target Cache_Headers
 Cache_Headers_EXTERNAL_OBJECTS =
 
 Headers/libCache_Headers.a: Headers/CMakeFiles/Cache_Headers.dir/CacheConfig/Cache.cpp.obj
+Headers/libCache_Headers.a: Headers/CMakeFiles/Cache_Headers.dir/CacheConfig/CacheAnalyze.cpp.obj
 Headers/libCache_Headers.a: Headers/CMakeFiles/Cache_Headers.dir/build.make
 Headers/libCache_Headers.a: Headers/CMakeFiles/Cache_Headers.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\TI Lab\Desktop\Project\New folder\CacheSim\Build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libCache_Headers.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\TI Lab\Desktop\Project\New folder\CacheSim\Build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libCache_Headers.a"
 	cd /d C:\Users\TILAB~1\Desktop\Project\NEWFOL~1\CacheSim\Build\Headers && $(CMAKE_COMMAND) -P CMakeFiles\Cache_Headers.dir\cmake_clean_target.cmake
 	cd /d C:\Users\TILAB~1\Desktop\Project\NEWFOL~1\CacheSim\Build\Headers && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Cache_Headers.dir\link.txt --verbose=$(VERBOSE)
 

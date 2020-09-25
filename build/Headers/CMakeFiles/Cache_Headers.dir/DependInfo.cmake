@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/TI Lab/Desktop/Project/New folder/CacheSim/Headers/CacheConfig/Cache.cpp" "C:/Users/TI Lab/Desktop/Project/New folder/CacheSim/Build/Headers/CMakeFiles/Cache_Headers.dir/CacheConfig/Cache.cpp.obj"
+  "C:/Users/TI Lab/Desktop/Project/New folder/CacheSim/Headers/CacheConfig/CacheAnalyze.cpp" "C:/Users/TI Lab/Desktop/Project/New folder/CacheSim/Build/Headers/CMakeFiles/Cache_Headers.dir/CacheConfig/CacheAnalyze.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
